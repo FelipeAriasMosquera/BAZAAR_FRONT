@@ -6,10 +6,49 @@
 }
 
 @theme inline {
+  --font-display: var(--font-outfit), sans-serif;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Marca y acentos */
+  --color-primary: #7c3aed;
+  --color-primary-dark: #2e1065;
+  --color-accent: #f43f5e;
+  --color-orange: #ff8a65;
+  --color-live: #ef4444;
+  --color-rating: #fbbf24;
+
+  /* Fondos */
+  --color-background: #ffffff;
+  --color-surface: #f8fafc;
+  --color-dark: #0f172a;
+  --color-dark-surface: #1e293b;
+
+  /* Textos */
+  --color-text: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94a3b8;
+  --color-text-placeholder: #6b7280;
+  --color-text-light: #f1f5f9;
+  --color-text-lavender: #f5f3ff;
+
+  /* Bordes */
+  --color-border: #e2e8f0;
+  --color-border-dark: #334155;
+
+  /* Fondos pastel de categorías */
+  --color-lavender-soft: #ede9fe;
+  --color-rose-soft: #ffe4e6;
+  --color-green-soft: #ecfdf5;
+  --color-red-soft: #fee2e2;
+  --color-pink-soft: #fdf2f8;
+  --color-yellow-soft: #fef3c7;
+
+  /* Superposiciones */
+  --color-overlay-dark: rgb(15 23 42 / 80%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +62,31 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Degradados: se guardan como variables y se exponen como clases */
+:root {
+  --gradient-hero: linear-gradient(
+    90deg,
+    #2e1065 0%,
+    #7c3aed 50%,
+    #f43f5e 100%
+  );
+  --gradient-offers: linear-gradient(90deg, #f43f5e 0%, #ff8a65 100%);
+  --gradient-newsletter: linear-gradient(90deg, #7c3aed 0%, #f43f5e 100%);
+}
+
+@utility bg-gradient-hero {
+  background-image: var(--gradient-hero);
+}
+@utility bg-gradient-offers {
+  background-image: var(--gradient-offers);
+}
+@utility bg-gradient-newsletter {
+  background-image: var(--gradient-newsletter);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text);
 }
